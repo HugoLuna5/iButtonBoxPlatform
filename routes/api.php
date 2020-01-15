@@ -17,6 +17,8 @@ Route::prefix('v1')->group(function(){
     Route::post('register', 'Api\AuthController@registerUser');
     Route::group(['middleware' => 'auth:api'], function(){
         Route::post('logout', 'Api\AuthController@logout');
+        Route::post('/getDataUser', 'Api\UserController@getDataUser');
+
 
         /**
          * Groups

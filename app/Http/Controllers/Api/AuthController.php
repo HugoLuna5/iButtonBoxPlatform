@@ -24,14 +24,15 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'id_type' => ['required'],
             'name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
+            'last_name_p' => ['required', 'string', 'max:255'],
+            'last_name_m' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'phone' => ['required'],
             'device_token' => ['required'],
         ]);
         if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
+            return response()->json(['error'=>$validator->errors()], $this->successStatus);
         }
 
         $input = $request->all();
@@ -63,10 +64,10 @@ class AuthController extends Controller
             if (password_verify(\request('password'), $user->password)){
                 return response()->json(['status' => "success", 'message'=>'Iniciaste sesión correctamente', 'token'=>$user->createToken($user->email)->accessToken], $this->successStatus);
             }else{
-                return response()->json(['status' => "error", 'message'=>'Error al inciar sesion'], 401);
+                return response()->json(['status' => "error", 'message'=>'Error al inciar sesion, es posible que tus credenciales no sean correctas.'], $this->successStatus);
             }
         }else{
-            return response()->json(['status' => "error", 'message'=>'Es posible que aun no estes registrado'], 401);
+            return response()->json(['status' => "error", 'message'=>'Es posible que tus credenciales no existan.'], $this->successStatus);
         }
     }
 
