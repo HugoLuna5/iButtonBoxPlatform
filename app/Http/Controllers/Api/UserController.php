@@ -15,8 +15,8 @@ class UserController extends Controller
     public function getDataUser(Request $request){
 
         $user = Auth::guard('api')->user();
-        $user['message'] = 'success';
-        $user['status'] = 'Datos obtenido correctamente';
+        $user['status'] = 'success';
+        $user['message'] = 'Datos obtenido correctamente';
 
         return response()->json($user, $this->successStatus);
     }

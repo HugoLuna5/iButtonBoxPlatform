@@ -25,6 +25,7 @@ Route::prefix('v1')->group(function(){
          */
         Route::post('create/group', 'Api\GroupController@createGroups');
         Route::post('join/group', 'Api\GroupController@joinGroups');
+        Route::post('members/group', 'Api\GroupController@membersGroups');
 
 
         Route::post('my/groups/teacher', 'Api\GroupController@myGroupsTeacher');

@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="05d30dfc-0185-4cbf-9374-3b482836d875" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/GroupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/GroupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/Member.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Member.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +168,11 @@
       <updated>1578866099731</updated>
       <workItem from="1578866102180" duration="626000" />
       <workItem from="1578882688152" duration="9154000" />
-      <workItem from="1579050220260" duration="5455000" />
+      <workItem from="1579050220260" duration="5605000" />
+      <workItem from="1579206071453" duration="606000" />
+      <workItem from="1579233130568" duration="630000" />
+      <workItem from="1579290155235" duration="611000" />
+      <workItem from="1579320243351" duration="7640000" />
     </task>
     <servers />
   </component>
@@ -177,13 +180,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="410" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578892410534">
+    <state x="134" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579328819381">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="410" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728/1360.0.1440.860@0.0.1360.728" timestamp="1578892410534" />
-    <state x="376" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1579050296273">
+    <state x="134" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1360.728/1360.0.1440.860@0.0.1360.728" timestamp="1579328819381" />
+    <state x="410" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579326521961">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="376" y="187" key="com.intellij.ide.util.TipDialog/0.0.1360.728/1360.0.1440.860@0.0.1360.728" timestamp="1579050296273" />
+    <state x="410" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728/1360.0.1440.860@0.0.1360.728" timestamp="1579326521961" />
+    <state x="376" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1579290161229">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="376" y="187" key="com.intellij.ide.util.TipDialog/0.0.1360.728/1360.0.1440.860@0.0.1360.728" timestamp="1579290161229" />
   </component>
 </project>

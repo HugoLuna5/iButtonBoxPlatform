@@ -6,6 +6,7 @@ use App\model\Group;
 use App\model\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class GroupController extends Controller
@@ -16,7 +17,7 @@ class GroupController extends Controller
 
     public function createGroups(Request $request){
         $validator = Validator::make(request()->all(), [
-            'id_creator' => ['required'],
+
             'name' => ['required'],
             'desc' => ['required'],
             'color' => ['required'],
@@ -27,8 +28,10 @@ class GroupController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);
         }
 
+        $user = Auth::guard('api')->user();
+
         $group = new Group();
-        $group->id_creator = $request->id_creator;
+        $group->id_creator = $user->id;
         $group->name = $request->name;
         $group->desc = $request->desc;
         $group->color = $request->color;
@@ -92,6 +95,25 @@ class GroupController extends Controller
 
         }
 
+
+    }
+
+    public function myGroupsTeacher(Request $request){
+        $user = Auth::guard('api')->user();
+        $groups = Group::where('id_creator', $user->id)->orderBy('created_at','desc')->get();
+
+        return response()->json(['statusResponse' => 'success', 'message' => 'Datos obtenido correctamente' , 'groups' => $groups], $this->successStatus);
+
+    }
+
+    public function membersGroups(Request $request){
+        $validator = Validator::make(request()->all(), [
+            'id_grupo' => ['required'],
+        ]);
+
+        $members = Member::where('id_group', $request->id_group)->orderBy('created_at')->with('user')->get();
+
+        return response()->json(['status' =>'success', 'message' => 'Datos obtenidos correctamente', 'members' => $members], $this->successStatus);
 
     }
 
